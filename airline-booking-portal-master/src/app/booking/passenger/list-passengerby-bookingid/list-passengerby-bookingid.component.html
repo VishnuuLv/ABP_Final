@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Passenger List
+    <!-- <span style="margin-left: 120vh"><button class="btn btn-info" [routerLink]="['/addnewairline']"  >Add New Airline</button></span> -->
+  </h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Passenger Name</th>
+          <th>Gender</th>
+          <th>Age</th>
+          <th>Class</th>
+          <th>Meal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let passenger of passenger_list">
+          <td> {{passenger.passengerName}}</td>
+          <td>{{passenger.passengerGender}}</td>
+          <td>{{passenger.passengerAge}}</td>
+          <td>{{passenger.typeOfSeats}}</td>
+          <td>{{passenger.optForMeal}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

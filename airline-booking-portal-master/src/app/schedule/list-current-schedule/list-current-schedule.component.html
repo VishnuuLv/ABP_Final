@@ -1,0 +1,60 @@
+<div class="panel panel-primary">
+  <div class="card text-center mb-4">
+    <h1 class="font-bold mt-4 mb-3 h5"><i class="fa-solid fa-plane-up"></i> Book Your Flight </h1>
+  </div>
+
+  <form [formGroup]="searchForm">
+  <div class="row">
+    <div class="col-3">
+      <input type="text" class="form-control" placeholder="Source" formControlName="fromPlace" />
+    </div>
+    <div class="col-3">
+      <input type="text" class="form-control" placeholder="Destination" formControlName="toPlace" />
+    </div>
+    <div class="col-3">
+      <input type="date" class="form-control" placeholder="Travel Date" formControlName="startDate" />
+    </div>
+    <div class="col-3">
+      <button class="btn btn-success" (click)="search()">Search Flights!!!</button>&nbsp;
+    </div>
+  </div>
+</form>
+
+  <div class="panel-body">
+    <table class="table">
+      <thead style="text-align: center;">
+        <tr>
+          <th>Source</th>
+          <th>Destination</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Carrier</th>
+          <th>Price*</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let schedule of schedule_details" style="text-align: center;">
+          <td>{{schedule.fromPlace}}</td>
+          <td>{{schedule.toPlace}}</td>
+          <td>
+            <span class="time">{{schedule.startDate | date: 'shortTime'}}</span><br>
+            <span class="date">{{schedule.startDate | date: 'MMM d yyyy'}}</span>
+          </td>
+          <td> <span class="time">{{schedule.endDate | date: 'shortTime'}}</span><br>
+            <span class="date">{{schedule.endDate | date: 'MMM d yyyy'}}</span></td>
+           <td>{{schedule.instrumentused}}</td>
+           <td>{{schedule.economyCost | currency:'INR'}}</td>
+          <td>
+            <!-- <button (click)="removeSchedule(schedule.scheduleDetailsId)" class="btn btn-danger">Delete</button> -->
+
+            <button class="button" style="vertical-align:middle"
+            [routerLink]="['/booknow',schedule.scheduleDetailsId]"
+            ><span>Book Now </span></button>
+              <!-- <button  class="btn btn-info" style="margin-left: 10px">Details</button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

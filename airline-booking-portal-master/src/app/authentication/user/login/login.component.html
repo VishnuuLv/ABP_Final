@@ -1,0 +1,78 @@
+<!-- <div class="row">
+  <div class="col-6 m-auto">
+    <div class="card m-auto">
+      <div class="card-header">
+        <h3>Register</h3>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+          <div class="form-group col-12">
+            <label for="userName" class="form-label">User Name</label>
+            <input type="text" class="form-control" formControlName="userName"
+            placeholder="Please Enter User Name"
+            [ngStyle]="{'border-color': (!userName.valid && (userName.touched )) ?
+           'red':'none'}">
+            <span *ngIf="!userName.valid && (userName.touched)" class="error-block"
+              style="color: red; font-style: italic;">
+              User Name Required
+            </span>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="password" class="form-label">Contact Address</label>
+            <input type="password" class="form-control" formControlName="password"
+            placeholder="Please enter Password"
+            [ngStyle]="{'border-color': (!password.valid && (password.touched )) ?
+           'red':'none'}">
+            <span *ngIf="!password.valid && (password.touched )" class="error-block">
+              <span *ngIf="password.hasError('required')" style="color: red; font-style: italic;">
+               Password Required
+              </span>
+            </span>
+          </div>
+          <div class="form-group col-12">
+            <button type="submit" class="btn btn-primary" [disabled]="!addUserForm.valid">Add</button>
+            <button type="button" (click)="onReset()" class="btn btn-secondary ml-2" routerLink="">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div *ngIf="submitted" style="color: green; text-align: center; ">
+  <h4>User Registered successfully!</h4>
+</div> -->
+<div class="body">
+
+<form  [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+  <h1>Welcome</h1>
+  <p>Enter your credentials to continue.</p>
+
+  <div class="input-wrapper">
+    <input type="text" placeholder="Enter your username" formControlName="userName" placeholder="Please Enter User Name"
+    [ngStyle]="{'border-color': (!userName.valid && (userName.touched )) ?
+   'red':'none'}" />
+    <i class="bx bxs-user-circle"></i>
+  </div>
+
+  <div class="input-wrapper">
+    <input type="password" placeholder="Enter your password"  formControlName="password"
+    placeholder="Please enter Password"
+    [ngStyle]="{'border-color': (!password.valid && (password.touched )) ?
+   'red':'none'}">
+    <i class="bx bx-key"></i>
+  </div>
+
+  <div>
+    <div class="form-group col-12">
+      <button type="submit" class="btn btn-primary" [disabled]="!addUserForm.valid">Login</button>
+      <button type="button" (click)="onReset()" class="btn btn-secondary ml-2" routerLink="">Cancel</button>
+    </div>
+    <br>
+    <div class="form-group col-12">
+      <button type="button"  class="btn btn-secondary ml-2"  routerLink="registerUser">Register New User</button>
+    </div>
+  </div>
+</form>
+</div>

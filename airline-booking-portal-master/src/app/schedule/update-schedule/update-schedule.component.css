@@ -1,0 +1,14 @@
+.btn-primary{
+  background-color: #F8662F;
+  width:80pt;
+}
+
+.btn-secondary{
+  background-color: #E80E36;
+  width:80pt;
+}
+
+.card{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100%;
+}

@@ -1,0 +1,24 @@
+.form-control:focus{
+  border-color: black;
+  box-shadow: none;
+}
+
+.coupontext{
+  color: orange;
+  font-size: 12px;
+}
+
+.btn:disabled{
+  color: white;
+  opacity: 0.5;
+}
+
+.card{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+.text-center{
+  background-color: #D84A15;
+  color: white;
+}

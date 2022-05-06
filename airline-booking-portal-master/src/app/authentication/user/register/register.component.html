@@ -1,0 +1,72 @@
+<div class="body">
+  <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+    <div class="form-group col-12">
+      <label for="userName" class="form-label">Email</label>
+      <input type="text" class="form-control" formControlName="userName" placeholder="Please Enter Email ID" [ngStyle]="{'border-color': (!userName.valid && (userName.touched )) ?
+           'red':'none'}">
+      <span *ngIf="!userName.valid && (userName.touched)" class="error-block" style="color: red; font-style: italic;">
+        User Name Required
+      </span>
+    </div>
+    <div class="row">
+      <div class="col-6 m-auto">
+      <label for="firstName" class="form-label">First Name</label>
+      <input type="text" class="form-control" formControlName="firstName" placeholder="Please enter firstName"
+        [ngStyle]="{'border-color': (!firstName.valid && (firstName.touched )) ?
+              'red':'none'}">
+      <span *ngIf="!firstName.valid && (firstName.touched )" class="error-block">
+        <span *ngIf="firstName.hasError('required')" style="color: red; font-style: italic;">
+          First Name Required
+        </span>
+      </span>
+    </div>
+    <div class="col-6 m-auto">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input type="text" class="form-control" formControlName="lastName" placeholder="Please enter lastName" [ngStyle]="{'border-color': (!lastName.valid && (lastName.touched )) ?
+              'red':'none'}">
+      <span *ngIf="!lastName.valid && (lastName.touched )" class="error-block">
+        <span *ngIf="lastName.hasError('required')" style="color: red; font-style: italic;">
+          Last Name Required
+        </span>
+      </span>
+    </div>
+    </div>
+    <div class="form-group col-12">
+      <label for="passwordHash" class="form-label">Password</label>
+      <input type="password" class="form-control" formControlName="passwordHash" placeholder="Please enter Password"
+        [ngStyle]="{'border-color': (!passwordHash.valid && (passwordHash.touched )) ?
+           'red':'none'}">
+      <span *ngIf="!passwordHash.valid && (passwordHash.touched )" class="error-block">
+        <span *ngIf="passwordHash.hasError('required')" style="color: red; font-style: italic;">
+          Password Required
+        </span>
+      </span>
+    </div>
+    <div class="form-group col-12">
+      <label for="role" class="form-label">Role</label>
+
+      <select class="form-select" formControlName="role" [ngStyle]="{
+        'border-color':
+          !role.valid && role.touched
+            ? 'red'
+            : 'none'
+      }">
+        <option value="" selected disabled>Role</option>
+        <option value="User">User</option>
+        <option value="Admin">Admin</option>
+      </select>
+    </div>
+
+    <br>
+    <div class="form-group col-12">
+      <button type="submit" class="btn btn-primary" [disabled]="!addUserForm.valid">Register</button>&nbsp;&nbsp;
+      <button type="button" (click)="onReset()" class="btn btn-secondary ml-2" routerLink="">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+<br>
+<div *ngIf="submitted" style="color: green; text-align: center; ">
+  <h4>User Registered successfully!</h4>
+</div>

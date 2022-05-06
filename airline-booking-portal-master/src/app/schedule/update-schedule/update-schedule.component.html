@@ -1,0 +1,168 @@
+<div class="row">
+  <div class="col-6 m-auto">
+    <div class="card m-auto">
+      <div class="card-header text-center">
+        <h3>Update Airline</h3>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="updateScheduleForm" (ngSubmit)="onSubmit()">
+          <div class="form-group col-12">
+            <label for=" flightNumber" class="form-label">Airline Number</label>
+            <input type="text" class="form-control" formControlName="flightNumber" [ngStyle]="{'border-color': (!flightNumber.valid && (flightNumber.touched )) ?
+            'red':'none'}">
+            <span *ngIf="!flightNumber.valid && (flightNumber.touched)" class="error-block"
+              style="color: red; font-style: italic;">
+              Please provide airline number
+            </span>
+          </div>
+          <div class="row">
+            <div class="col-6 m-auto">
+              <label for="source" class="form-label">Source</label>
+              <input type="text" class="form-control" formControlName="fromPlace" [ngStyle]="{'border-color': (!fromPlace.valid && (fromPlace.touched )) ?
+          'red':'none'}">
+              <span *ngIf="!fromPlace.valid && (fromPlace.touched )" class="error-block">
+                <span *ngIf="fromPlace.hasError('required')" style="color: red; font-style: italic;">
+                  Please provide Source
+                </span>
+              </span>
+            </div>
+
+            <div class="col-6 m-auto">
+              <label for="destination" class="form-label">Destination</label>
+              <input type="text" class="form-control" formControlName="toPlace" [ngStyle]="{'border-color': (!toPlace.valid && (toPlace.touched )) ?
+           'red':'none'}">
+              <span *ngIf="!toPlace.valid && (toPlace.touched )" class="error-block">
+                <span *ngIf="toPlace.hasError('required')" style="color: red; font-style: italic;">
+                  Please provide Destination
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 m-auto">
+              <label for="depDate" class="form-label">Departure Date</label>
+              <input type="datetime-local" class="form-control" formControlName="startDate" [ngStyle]="{'border-color': (!startDate.valid && (startDate.touched )) ?
+           'red':'none'}">
+              <span *ngIf="!startDate.valid && (startDate.touched )" class="error-block">
+                <span *ngIf="startDate.hasError('required')" style="color: red; font-style: italic;">
+                  Please provide Departure Date
+                </span>
+              </span>
+            </div>
+            <div class="col-6 m-auto">
+              <label for="arrDate" class="form-label">Arrival Date</label>
+              <input type="datetime-local" class="form-control" formControlName="endDate" [ngStyle]="{'border-color': (!endDate.valid && (endDate.touched )) ?
+           'red':'none'}">
+              <span *ngIf="!endDate.valid && (endDate.touched )" class="error-block">
+                <span *ngIf="endDate.hasError('required')" style="color: red; font-style: italic;">
+                  Please provide Departure Date
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group col-12">
+            <label for="Frequency" class="form-label">Frequency</label>
+            <select class="form-select" formControlName="scheduledDays" [ngStyle]="{
+                        'border-color':
+                          !scheduledDays.valid && scheduledDays.touched
+                            ? 'red'
+                            : 'none'
+                      }">
+              <option value="" selected disabled>Frequency</option>
+              <option value="Daily">Daily</option>
+              <option value="Weekly">Weekly</option>
+            </select>
+
+          </div>
+          <div class="row">
+            <div class="col-3 m-auto">
+              <label for="eSeats" class="form-label">E.Seats</label>
+              <input type="number" class="form-control" formControlName="economySeats" [ngStyle]="{'border-color': (!economySeats.valid && (economySeats.touched )) ?
+           'red':'none'}">
+              <span *ngIf="!economySeats.valid && (economySeats.touched )" class="error-block">
+                <span *ngIf="economySeats.hasError('required')" style="color: red; font-style: italic;">
+                  Please provide Number of Economy Seats
+                </span>
+              </span>
+            </div>
+            <div class="col-3 m-auto">
+              <label for="bSeats" class="form-label">B.Seats</label>
+              <input type="number" class="form-control" formControlName="businessClassSeats" [ngStyle]="{'border-color': (!businessClassSeats.valid && (businessClassSeats.touched )) ?
+           'red':'none'}">
+              <span *ngIf="!businessClassSeats.valid && (businessClassSeats.touched )" class="error-block">
+                <span *ngIf="businessClassSeats.hasError('required')" style="color: red; font-style: italic;">
+                  Please provide Number of Business Class Seats
+                </span>
+              </span>
+            </div>
+            <div class="col-3 m-auto">
+              <label for="bCost" class="form-label">E.Fare</label>
+              <input type="number" class="form-control" formControlName="economyCost" [ngStyle]="{'border-color': (!economyCost.valid && (economyCost.touched )) ?
+           'red':'none'}">
+              <span *ngIf="!economyCost.valid && (economyCost.touched )" class="error-block">
+                <span *ngIf="economyCost.hasError('required')" style="color: red; font-style: italic;">
+                  Please provide Economy Fare
+                </span>
+              </span>
+            </div>
+            <div class="col-3 m-auto">
+              <label for="bCost" class="form-label">B.Fare</label>
+              <input type="number" class="form-control" formControlName="businessClassCost" [ngStyle]="{'border-color': (!businessClassCost.valid && (businessClassCost.touched )) ?
+           'red':'none'}">
+              <span *ngIf="!businessClassCost.valid && (businessClassCost.touched )" class="error-block">
+                <span *ngIf="businessClassCost.hasError('required')" style="color: red; font-style: italic;">
+                  Please provide Business Class Fare
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 m-auto">
+              <label for="noOfRows" class="form-label">No Of Rows</label>
+              <input type="number" class="form-control" formControlName="noOfRows" [ngStyle]="{'border-color': (!noOfRows.valid && (noOfRows.touched )) ?
+           'red':'none'}">
+              <span *ngIf="!noOfRows.valid && (noOfRows.touched )" class="error-block">
+                <span *ngIf="noOfRows.hasError('required')" style="color: red; font-style: italic;">
+                  Please provide Number Of Rows Available
+                </span>
+              </span>
+            </div>
+            <div class="col-4 m-auto">
+              <label for="carriertype" class="form-label">Carrier Type</label>
+              <input type="text" class="form-control" formControlName="instrumentused" [ngStyle]="{'border-color': (!instrumentused.valid && (instrumentused.touched )) ?
+           'red':'none'}">
+              <span *ngIf="!instrumentused.valid && (instrumentused.touched )" class="error-block">
+                <span *ngIf="instrumentused.hasError('required')" style="color: red; font-style: italic;">
+                  Please provide Carrier Type
+                </span>
+              </span>
+            </div>
+            <div class="col-4 m-auto">
+              <label for="meal" class="form-label">Meal</label>
+              <select class="form-select" formControlName="meal" [ngStyle]="{
+                        'border-color':
+                          !meal.valid && meal.touched
+                            ? 'red'
+                            : 'none'
+                      }">
+                <option value="" selected disabled>Meal</option>
+                <option value="Veg">Veg</option>
+                <option value="NonVeg">Non Veg</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="form-group col-12">
+            <button type="submit" class="btn btn-primary" [disabled]="!updateScheduleForm.valid"><i
+              class="fa-solid fa-plus"></i>Update</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-secondary ml-2" routerLink="/schedulelist"><i class="fa-solid fa-trash-can"></i>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div *ngIf="submitted" style="color: green; text-align: center; ">
+  <h4>Schedule Updated successfully!</h4>
+</div>

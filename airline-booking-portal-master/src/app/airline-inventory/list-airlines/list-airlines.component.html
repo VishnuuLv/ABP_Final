@@ -1,0 +1,41 @@
+<div class="panel panel-primary">
+  <div class="card text-center mb-4">
+    <h1 class="font-bold mt-4 mb-3 h5"><i class="fa-solid fa-plane-up"></i> List of Airline
+      <button class="btn btn-info"
+      [routerLink]="['/addnewairline']">Add New Airline</button>
+    </h1>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead style="text-align: center;">
+        <tr>
+          <th>FlightName</th>
+          <th>ContactNumber</th>
+          <th>ContactAddress</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let airport of flight_name" style="text-align: center;">
+          <td> {{airport.flightName}}</td>
+          <td>{{airport.contactNumber}}</td>
+          <td>{{airport.contactAddress}}</td>
+          <td  >
+            <span [ngStyle]="{'background-color': (airport.isActive==='Y' ) ?
+            '#81CB21'  :'#DC3D1D'}">
+            {{airport.isActive==='Y' ?'Active':'InActive'}}
+          </span>
+            </td>
+          <td>
+            <button (click)="removeAirport(airport.flightId)" class="btn btn-danger" *ngIf="airport.isActive==='Y'">Delete</button>
+            <button class="btn btn-info" style="margin-left: 10px" *ngIf="airport.isActive==='Y'" [routerLink]="['/updateAirline',airport.flightId]">update</button>
+            <button class="btn btn-info" style="margin-left: 40px" *ngIf="airport.isActive==='N'" [routerLink]="['/updateAirline',airport.flightId]">Activate</button>
+
+              <!-- <button  class="btn btn-info" style="margin-left: 10px">Details</button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

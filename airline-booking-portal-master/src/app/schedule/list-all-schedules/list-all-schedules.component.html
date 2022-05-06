@@ -1,0 +1,55 @@
+<div class="panel panel-primary">
+  <!-- <div class="panel-heading">
+    <h2>Book your flight!!!
+     <span style="margin-left: 120vh"><button class="btn btn-info" [routerLink]="['/addnewschedule']" >Add New Schedule</button></span>
+  </h2>
+  </div> -->
+  <div class="card text-center mb-4">
+    <h1 class="font-bold mt-4 mb-3 h5"><i class="fa-solid fa-plane-up"></i>Book your flight!!!
+    <button class="btn btn-info" [routerLink]="['/addnewschedule']" >Add New Schedule</button>
+  </h1>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead style="text-align: center;">
+        <tr>
+          <th>Source</th>
+          <th>Destination</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Carrier</th>
+          <th>Price*</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let schedule of schedule_details" style="text-align: center;">
+          <td>{{schedule.fromPlace}}</td>
+          <td>{{schedule.toPlace}}</td>
+          <td>
+            <span class="time">{{schedule.startDate | date: 'shortTime'}}</span><br>
+            <span class="date">{{schedule.startDate | date: 'MMM d yyyy'}}</span>
+          </td>
+          <td><span class="time">{{schedule.endDate | date: 'shortTime'}}</span><br>
+            <span class="date">{{schedule.endDate | date: 'MMM d yyyy'}}</span></td>
+           <td>{{schedule.instrumentused}}</td>
+           <td>{{schedule.economyCost | currency:'INR'}}</td>
+           <td  >
+            <span [ngStyle]="{'background-color': (schedule.isActive==='Y' ) ?
+            '#81CB21'  :'#DC3D1D'}">
+            {{schedule.isActive==='Y' ?'Active':'InActive'}}
+          </span>
+            </td>
+          <td>
+            <button (click)="removeSchedule(schedule.scheduleDetailsId)" class="btn btn-danger" *ngIf="schedule.isActive==='Y'">Delete</button>
+            <!-- <button class="btn btn-info" style="margin-left: 10px" [routerLink]="['/booknow',schedule.scheduleDetailsId]">Book Now</button> -->
+              <button  class="btn btn-info" style="margin-left: 10px" *ngIf="schedule.isActive==='Y'" [routerLink]="['/updateSchedule',schedule.scheduleDetailsId]">Update</button>
+              <button  class="btn btn-info" style="margin-left: 40px" *ngIf="schedule.isActive==='N'" [routerLink]="['/updateSchedule',schedule.scheduleDetailsId]">Activate</button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="panel panel-primary">
+  <!-- <div class="panel-heading">
+    <h2>
+    < <span style="margin-left: 120vh"><button class="btn btn-info"  >Add New Airline</button></span> -->
+  <!-- </h2>
+  </div> -->
+  <div class="card text-center mb-4">
+    <h1 class="font-bold mt-4 mb-3 h5"><i class="fa-solid fa-plane-up"></i> Booking Details</h1>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead style="text-align: center;">
+        <tr>
+          <th>PNR Number</th>
+          <th>Booked Date</th>
+          <th>Source</th>
+          <th>Destination</th>
+          <th>Journey Date</th>
+          <th>Cost</th>
+          <th>Status</th>
+          <!-- <th>ContactAddress</th> -->
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of booking_details" style="text-align: center;">
+          <td> {{booking.pnr}}</td>
+          <td>
+            <span class="time">{{booking.createdDate | date: 'shortTime'}}</span><br>
+            <span class="date">{{booking.createdDate | date: 'MMM d yyyy'}}</span>
+          </td>
+          <td>{{booking.source}}</td>
+          <td>{{booking.destination}}</td>
+          <td>
+            <span class="time">{{booking.departureDate | date: 'shortTime'}}</span><br>
+            <span class="date">{{booking.departureDate| date: 'MMM d yyyy'}}</span>
+          </td>
+          <td>
+            {{booking.finalticketCost | currency:'INR'}}
+          </td>
+          <td  >
+            <span [ngStyle]="{'background-color': (booking.isActive==='Y' ) ?
+            '#81CB21'  :'#DC3D1D'}">
+            {{booking.isActive==='Y' ?'Booked':'Cancelled'}}
+          </span>
+            </td>
+
+          <!-- <td>{{booking.contactAddress}}</td> -->
+          <td><button (click)="removeBooking(booking.bookingId)" class="btn btn-danger" *ngIf="booking.isActive==='Y'">Cancel</button>
+            <button class="btn btn-info" style="margin-left: 10px"  *ngIf="booking.isActive==='Y'" [routerLink]="['/listpassengers',booking.bookingId]">View Details</button>
+              <!-- <button  class="btn btn-info" style="margin-left: 10px">Details</button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

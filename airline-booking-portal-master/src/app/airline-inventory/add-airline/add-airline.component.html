@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-6 m-auto">
+    <div class="card m-auto">
+      <div class="card-header text-center">
+        <h3>Register</h3>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="addAirlineForm" (ngSubmit)="onSubmit()">
+          <div class="form-group col-12">
+            <label for="name" class="form-label">Airline Name</label>
+            <input type="text" class="form-control" formControlName="airlineName"
+            placeholder="Please Enter Airline Name"
+            [ngStyle]="{'border-color': (!airlineName.valid && (airlineName.touched )) ?
+           'red':'none'}">
+            <span *ngIf="!airlineName.valid && (airlineName.touched)" class="error-block"
+              style="color: red; font-style: italic;">
+              Please provide airline name
+            </span>
+          </div>
+          <div class="form-group col-12">
+            <label for="number" class="form-label">Contact Number</label>
+            <input type="text" class="form-control" formControlName="contactNumber"
+              placeholder="Please enter contact number"
+               [ngStyle]="{'border-color': (!contactNumber.valid && (contactNumber.touched )) ?
+              'red':'none'}">
+            <span *ngIf="!contactNumber.valid && (contactNumber.touched )" class="error-block">
+              <span *ngIf="contactNumber.hasError('required')" style="color: red; font-style: italic;">
+                Please provide contact number
+              </span>
+            </span>
+          </div>
+          <div class="form-group col-12">
+            <label for="contactAddress" class="form-label">Contact Address</label>
+            <input type="text" class="form-control" formControlName="contactAddress"
+            placeholder="Please enter contact Address"
+            [ngStyle]="{'border-color': (!contactAddress.valid && (contactAddress.touched )) ?
+           'red':'none'}">
+            <span *ngIf="!contactAddress.valid && (contactAddress.touched )" class="error-block">
+              <span *ngIf="contactAddress.hasError('required')" style="color: red; font-style: italic;">
+                Please provide contact Address
+              </span>
+            </span>
+          </div>
+          <div class="form-group col-12 mt-2">
+            <button type="submit" class="btn btn-primary" [disabled]="!addAirlineForm.valid"><i class="fa-solid fa-plus"></i> Add</button>&nbsp;&nbsp;
+            <button type="button" (click)="onReset()" class="btn btn-secondary ml-2" routerLink="/airline"><i class="fa-solid fa-trash-can"></i> Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div *ngIf="submitted" style="color: green; text-align: center; ">
+  <h4>Airline Registered successfully!</h4>
+</div>

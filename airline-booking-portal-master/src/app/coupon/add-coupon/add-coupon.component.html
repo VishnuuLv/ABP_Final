@@ -1,0 +1,85 @@
+<div class="row">
+  <div class="col-6 m-auto">
+    <div class="card m-auto">
+      <div class="card-header text-center">
+        <h3>Add New Coupon</h3>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="addCouponForm" (ngSubmit)="onSubmit()">
+          <div class="form-group col-12">
+            <label for="couponCode" class="form-label">Coupon Code</label>
+            <input type="text" class="form-control" formControlName="couponCode" [ngStyle]="{'border-color': (!couponCode.valid && (couponCode.touched )) ?
+            'red':'none'}">
+            <span *ngIf="!couponCode.valid && (couponCode.touched)" class="error-block"
+              style="color: red; font-style: italic;">
+              Please provide Coupon Code
+            </span>
+          </div>
+          <div class="form-group col-12">
+            <label for="discountPercentage" class="form-label">Percentage</label>
+            <input type="number" class="form-control" formControlName="discountPercentage" [ngStyle]="{'border-color': (!discountPercentage.valid && (discountPercentage.touched )) ?
+          'red':'none'}">
+            <span *ngIf="!discountPercentage.valid && (discountPercentage.touched )" class="error-block">
+              <span *ngIf="discountPercentage.hasError('required')" style="color: red; font-style: italic;">
+                Please provide Percentage
+              </span>
+            </span>
+          </div>
+          <div class="form-group col-12">
+            <label for="maxAmount" class="form-label">Max Value to be Discounted</label>
+            <input type="number" class="form-control" formControlName="maxAmount" [ngStyle]="{'border-color': (!maxAmount.valid && (maxAmount.touched )) ?
+           'red':'none'}">
+            <span *ngIf="!maxAmount.valid && (maxAmount.touched )" class="error-block">
+              <span *ngIf="maxAmount.hasError('required')" style="color: red; font-style: italic;">
+                Please provide Maximum Amount to be Discounted
+              </span>
+            </span>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="flightId" class="form-label">Applicable Airlines</label>
+            <input type="text" class="form-control" formControlName="flightId" [ngStyle]="{'border-color': (!flightId.valid && (flightId.touched )) ?
+            'red':'none'}">
+            <span *ngIf="!flightId.valid && (flightId.touched)" class="error-block"
+              style="color: red; font-style: italic;">
+              Please provide Flight id or ALL
+            </span>
+          </div>
+          <div class="row">
+            <div class="col-6 m-auto">
+              <label for="validityStartDate" class="form-label">Validity Start On</label>
+              <input type="datetime-local" class="form-control" formControlName="validityStartDate" [ngStyle]="{'border-color': (!validityStartDate.valid && (validityStartDate.touched )) ?
+          'red':'none'}">
+              <span *ngIf="!validityStartDate.valid && (validityStartDate.touched )" class="error-block">
+                <span *ngIf="validityStartDate.hasError('required')" style="color: red; font-style: italic;">
+                  Please provide Valid Start Date
+                </span>
+              </span>
+            </div>
+            <div class="col-6 m-auto">
+              <label for="validityEndDate" class="form-label">Validity Ends On</label>
+              <input type="datetime-local" class="form-control" formControlName="validityEndDate" [ngStyle]="{'border-color': (!validityEndDate.valid && (validityEndDate.touched )) ?
+           'red':'none'}">
+              <span *ngIf="!validityEndDate.valid && (validityEndDate.touched )" class="error-block">
+                <span *ngIf="validityEndDate.hasError('required')" style="color: red; font-style: italic;">
+                  Please provide Valid End Date
+                </span>
+              </span>
+            </div>
+          </div>
+          <br>
+          <div class="form-group col-12">
+            <button type="submit" class="btn btn-primary" [disabled]="!addCouponForm.valid"><i
+                class="fa-solid fa-plus"></i>Add</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-secondary ml-2" routerLink="/couponManagement"><i
+                class="fa-solid fa-trash-can"></i>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div *ngIf="submitted" style="color: green; text-align: center; ">
+  <h4>Coupon Added successfully!</h4>
+</div>

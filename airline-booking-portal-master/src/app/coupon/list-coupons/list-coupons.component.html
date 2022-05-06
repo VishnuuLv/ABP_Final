@@ -1,0 +1,48 @@
+<div class="panel panel-primary">
+  <!-- <div class="panel-heading">
+    <h2>List of Available Coupon
+    <span style="margin-left: 100vh"><button class="btn btn-info" [routerLink]="['/addcoupon']" routerLinkActive="router-link-active"  >Add New Coupon</button></span>
+  </h2>
+  </div> -->
+  <div class="card text-center mb-4">
+    <h1 class="font-bold mt-4 mb-3 h5"><i class="fa-solid fa-plane-up"></i>List of Available Coupon
+   <button class="btn btn-info" [routerLink]="['/addcoupon']" routerLinkActive="router-link-active"  >Add New Coupon</button>
+  </h1>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead style="text-align: center;">
+        <tr>
+          <th>Coupon Name</th>
+          <th>Percentage</th>
+          <th>Max Value</th>
+          <th>Validity Start Date</th>
+          <th>Validity End Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let coupon of coupon_name" style="text-align: center;">
+          <td> {{coupon.couponCode}}</td>
+          <td>{{coupon.discountPercentage}}</td>
+          <td>{{coupon.maxAmount}}</td>
+          <td>{{coupon.validityStartDate | date:"shortDate"}}</td>
+          <td>{{coupon.validityEndDate | date:"shortDate"}}</td>
+          <td  >
+            <span [ngStyle]="{'background-color': (coupon.isActive==='Y' ) ?
+            '#81CB21'  :'#DC3D1D'}">
+            {{coupon.isActive==='Y' ?'Active':'InActive'}}
+          </span>
+            </td>
+          <td><button (click)="removeCoupon(coupon.couponId)" class="btn btn-danger" *ngIf="coupon.isActive==='Y'">Delete</button>
+            <button class="btn btn-info" style="margin-left: 10px" *ngIf="coupon.isActive==='Y'" [routerLink]="['/updatecoupon',coupon.couponId]">Update</button>
+            <button class="btn btn-info" style="margin-left: 40px" *ngIf="coupon.isActive==='N'" [routerLink]="['/updatecoupon',coupon.couponId]">Activate</button>
+
+              <!-- <button  class="btn btn-info" style="margin-left: 10px">Details</button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
