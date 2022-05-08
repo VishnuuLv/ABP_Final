@@ -85,5 +85,11 @@ namespace Flight.Services.CouponAPI.Repository
             Coupon coupon = await _db.Coupons.Where(x => x.couponId == couponId).FirstOrDefaultAsync();
             return _mapper.Map<CouponViewDto>(coupon);
         }
+
+        public async Task<CouponViewDto> GetCouponByName(string couponCode)
+        {
+            Coupon coupon = await _db.Coupons.Where(x => x.couponCode == couponCode).FirstOrDefaultAsync();
+            return _mapper.Map<CouponViewDto>(coupon);
+        }
     }
 }

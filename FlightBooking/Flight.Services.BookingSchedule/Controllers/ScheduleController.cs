@@ -1,5 +1,7 @@
 ﻿using Flight.Services.BookingSchedule.Models.Dto;
+using Flight.Services.BookingSchedule.RabbitMQSender;
 using Flight.Services.BookingSchedule.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,15 +11,18 @@ using System.Threading.Tasks;
 namespace Flight.Services.BookingSchedule.Controllers
 {
     [Route("api/Schedule")]
+    
     public class ScheduleController : Controller
     {
         private readonly IScheduleRepository _scheduleRepository;
         protected ResponseDto _response;
+        private readonly IRabbitMQAirlineSender _rabbitMQairlineSender;
 
-        public ScheduleController(IScheduleRepository scheduleRepository)
+        public ScheduleController(IScheduleRepository scheduleRepository, IRabbitMQAirlineSender rabbitMQairlineSender)
         {
             _scheduleRepository = scheduleRepository;
             this._response = new ResponseDto();
+            _rabbitMQairlineSender = rabbitMQairlineSender;
         }
 
         [HttpGet("GetSchedule")]
@@ -72,6 +77,7 @@ namespace Flight.Services.BookingSchedule.Controllers
             return _response;
         }
         [HttpPost]
+        [Authorize(Policy = "Admin")]
         [Route("AddSchedule")]
 
         public async Task<object> AddSchedule([FromBody] ScheduleDetailDto scheduleDetailsDto)
@@ -80,6 +86,19 @@ namespace Flight.Services.BookingSchedule.Controllers
             {
                 ScheduleDetailDto scheduleDt = await _scheduleRepository.CreateUpdateSchedule(scheduleDetailsDto);
                 _response.Result = scheduleDt;
+
+                //ScheduleDetailViewDto schedule = await _scheduleRepository.GetScheduleById(scheduleDt.scheduleDetailsId);
+                //ScheduleDetailViewDto schedule1 = schedule;
+
+                LogsDto log = new LogsDto();
+                log.log = "New Schedule was added for the flight ID " + scheduleDetailsDto.flightId +" from "+scheduleDetailsDto.fromPlace+" to "+scheduleDetailsDto.toPlace+ " by Admin";
+                log.task = "Create";
+                log.senderAPI = "BookingScheduleAPI";
+
+
+                //rabbitMQ
+                _rabbitMQairlineSender.SendData(log, "logqueue");
+               // _rabbitMQairlineSender.SendData(schedule1, "scheduledataqueue");
             }
             catch (Exception ex)
             {
@@ -90,6 +109,7 @@ namespace Flight.Services.BookingSchedule.Controllers
         }
 
         [HttpPut]
+        [Authorize(Policy = "Admin")]
         [Route("UpdateSchedule")]
         public async Task<object> UpdateSchedule([FromBody] ScheduleDetailDto scheduleDetailsDto)
         {
@@ -97,6 +117,19 @@ namespace Flight.Services.BookingSchedule.Controllers
             {
                 ScheduleDetailDto scheduleDt = await _scheduleRepository.CreateUpdateSchedule(scheduleDetailsDto);
                 _response.Result = scheduleDt;
+
+                ScheduleDetailViewDto schedule = await _scheduleRepository.GetScheduleById(scheduleDt.scheduleDetailsId);
+                ScheduleDetailViewDto schedule1 = schedule;
+
+                LogsDto log = new LogsDto();
+                log.log = schedule1.scheduleDetailsId + " - Schedule was updated by Admin";
+                log.task = "Update";
+                log.senderAPI = "BookingScheduleAPI";
+
+
+                //rabbitMQ
+                _rabbitMQairlineSender.SendData(log, "logqueue");
+                // _rabbitMQairlineSender.SendData(schedule1, "scheduledataqueue");
             }
             catch (Exception ex)
             {
@@ -107,6 +140,7 @@ namespace Flight.Services.BookingSchedule.Controllers
         }
 
         [HttpDelete]
+        [Authorize(Policy = "Admin")]
         [Route("RemoveSchedule/{ScheduleDetailsId}")]
         public async Task<object> RemoveSchedule(int ScheduleDetailsId)
         {
@@ -114,6 +148,20 @@ namespace Flight.Services.BookingSchedule.Controllers
             {
                 bool isSuccess = await _scheduleRepository.RemoveSchedule(ScheduleDetailsId);
                 _response.Result = isSuccess;
+
+                ScheduleDetailViewDto schedule = await _scheduleRepository.GetScheduleById(ScheduleDetailsId);
+                ScheduleDetailViewDto schedule1 = schedule;
+
+                LogsDto log = new LogsDto();
+                log.log = schedule1.scheduleDetailsId + " - Schedule was deleted by Admin";
+                log.task = "Delete";
+                log.senderAPI = "BookingScheduleAPI";
+
+
+                //rabbitMQ
+                _rabbitMQairlineSender.SendData(log, "logqueue");
+                // _rabbitMQairlineSender.SendData(schedule1, "scheduledataqueue");
+
             }
             catch (Exception ex)
             {

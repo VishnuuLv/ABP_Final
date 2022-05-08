@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flight.Services.BookingSche
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flight.Services.UserManagement", "Flight.Services.UserManagement\Flight.Services.UserManagement.csproj", "{43CD06A0-C25D-4B9F-899C-50AE6DDE86ED}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{F0E391A2-5280-4B8F-8884-D810DC475BE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight.Services.LoggingApi", "Flight.Services.LoggingApi\Flight.Services.LoggingApi.csproj", "{C917BF61-05CC-453A-A1AD-440A3714A300}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{43CD06A0-C25D-4B9F-899C-50AE6DDE86ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43CD06A0-C25D-4B9F-899C-50AE6DDE86ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43CD06A0-C25D-4B9F-899C-50AE6DDE86ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0E391A2-5280-4B8F-8884-D810DC475BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0E391A2-5280-4B8F-8884-D810DC475BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0E391A2-5280-4B8F-8884-D810DC475BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0E391A2-5280-4B8F-8884-D810DC475BE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C917BF61-05CC-453A-A1AD-440A3714A300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C917BF61-05CC-453A-A1AD-440A3714A300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C917BF61-05CC-453A-A1AD-440A3714A300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C917BF61-05CC-453A-A1AD-440A3714A300}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +76,8 @@ Global
 		{0872C7E5-0616-4EB1-8F35-880A7AFFE93F} = {F706A5F9-71A8-4EFE-A0A4-EE5CA0631DE2}
 		{1BD22D04-3638-464E-9312-D42973C61E63} = {2555D305-C3FC-4E5A-9C54-E958033281E4}
 		{43CD06A0-C25D-4B9F-899C-50AE6DDE86ED} = {2555D305-C3FC-4E5A-9C54-E958033281E4}
+		{F0E391A2-5280-4B8F-8884-D810DC475BE7} = {2555D305-C3FC-4E5A-9C54-E958033281E4}
+		{C917BF61-05CC-453A-A1AD-440A3714A300} = {2555D305-C3FC-4E5A-9C54-E958033281E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89B1BEBF-02C9-4013-AC2F-123C049148D5}

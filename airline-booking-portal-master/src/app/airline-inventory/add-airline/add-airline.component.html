@@ -27,6 +27,9 @@
               <span *ngIf="contactNumber.hasError('required')" style="color: red; font-style: italic;">
                 Please provide contact number
               </span>
+              <span *ngIf="contactNumber.hasError('maxlength')" style="color: red; font-style: italic;">
+                Invalid mobile number
+              </span>
             </span>
           </div>
           <div class="form-group col-12">
@@ -51,6 +54,6 @@
   </div>
 </div>
 <br>
-<div *ngIf="submitted" style="color: green; text-align: center; ">
+<!-- <div *ngIf="submitted" style="color: green; text-align: center; ">
   <h4>Airline Registered successfully!</h4>
-</div>
+</div> -->

@@ -48,7 +48,7 @@
           <div class="row">
             <div class="col-6 m-auto">
               <label for="validityStartDate" class="form-label">Validity Start On</label>
-              <input type="datetime-local" class="form-control" formControlName="validityStartDate" [ngStyle]="{'border-color': (!validityStartDate.valid && (validityStartDate.touched )) ?
+              <input type="date" class="form-control" formControlName="validityStartDate" [ngStyle]="{'border-color': (!validityStartDate.valid && (validityStartDate.touched )) ?
           'red':'none'}">
               <span *ngIf="!validityStartDate.valid && (validityStartDate.touched )" class="error-block">
                 <span *ngIf="validityStartDate.hasError('required')" style="color: red; font-style: italic;">
@@ -58,7 +58,7 @@
             </div>
             <div class="col-6 m-auto">
               <label for="validityEndDate" class="form-label">Validity Ends On</label>
-              <input type="datetime-local" class="form-control" formControlName="validityEndDate" [ngStyle]="{'border-color': (!validityEndDate.valid && (validityEndDate.touched )) ?
+              <input type="date" class="form-control" formControlName="validityEndDate" [ngStyle]="{'border-color': (!validityEndDate.valid && (validityEndDate.touched )) ?
            'red':'none'}">
               <span *ngIf="!validityEndDate.valid && (validityEndDate.touched )" class="error-block">
                 <span *ngIf="validityEndDate.hasError('required')" style="color: red; font-style: italic;">
@@ -80,6 +80,6 @@
   </div>
 </div>
 <br>
-<div *ngIf="submitted" style="color: green; text-align: center; ">
+<!-- <div *ngIf="submitted" style="color: green; text-align: center; ">
   <h4>Coupon Added successfully!</h4>
-</div>
+</div> -->

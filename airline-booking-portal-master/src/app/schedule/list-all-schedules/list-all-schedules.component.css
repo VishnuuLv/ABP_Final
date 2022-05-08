@@ -1,0 +1,39 @@
+:host {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+.pagination /deep/ .ngx-pagination .current {
+    background: rgb(255, 98, 7);
+  }
+
+  .pagination /deep/ .ngx-pagination li {
+    border: 1px solid #CCCC;
+    margin-right: 0px;
+  }
+
+   .pagination /deep/ .ngx-pagination a::after{
+     display: none;
+   }
+
+   .pagination /deep/ .ngx-pagination li::before{
+     display: none;
+   }
+
+    .pagination /deep/ .ngx-pagination li::after{
+     display: none;
+   }
+   .pagination /deep/ .ngx-pagination a::before{
+    display: none;
+  }
+
+.text-center {
+ text-align: center;
+}
+
+.list {
+ max-width: 550px;
+ margin: auto;
+}
+
+li {
+ margin-bottom: 5px;
+}

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -7,7 +7,12 @@ import { environment } from 'src/environments/environment';
 })
 export class UserService {
 
-constructor(private httpclient:HttpClient) { }
+  httpheader=new HttpHeaders();
+
+constructor(private httpclient:HttpClient) {
+
+}
+
 
 addNormalUser(user:object){
   return this.httpclient.post( environment.baseurl + 'User/Register',user);
@@ -16,6 +21,10 @@ addNormalUser(user:object){
 getUserById(id:number){
   return this.httpclient.get( environment.baseurl + 'Userbyid/'+id);
 }
+
+// getUsers(data:string,httpheader:any){
+//   return this.httpclient.post('https://localhost:44384/connect/token',data,httpheader);
+// }
 
 login(login:object){
   return this.httpclient.post( environment.baseurl + 'Login',login);

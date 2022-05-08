@@ -20,6 +20,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Flight.MessageBus\Flight.MessageBus.csproj" />
+  </ItemGroup>
+
  
 
 </Project>

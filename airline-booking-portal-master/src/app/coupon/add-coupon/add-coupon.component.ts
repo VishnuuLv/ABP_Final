@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { Coupon } from 'src/app/models/class/coupon';
 import { CouponService } from 'src/app/services/coupon.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-add-coupon',
@@ -14,7 +15,7 @@ export class AddCouponComponent implements OnInit {
   submitted=false;
   addCouponForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private CouponService:CouponService,
+  constructor(private fb: FormBuilder,private CouponService:CouponService,private notifyService : NotificationService,
     private router: Router) {
     this.addCouponForm =  this.fb.group({
       couponCode: [null, Validators.required],
@@ -35,9 +36,10 @@ export class AddCouponComponent implements OnInit {
 
     if (this.addCouponForm.valid) {
         // this.user = Object.assign(this.user, this.registerationForm.value);
-        this.CouponService.updateCouponByID(this.userData()).subscribe(() =>
+        this.CouponService.addCoupon(this.userData()).subscribe(() =>
         {
             this.onReset();
+            this.notifyService.showSuccessMessage("Coupon Added Successfully")
             this.submitted = true;
         });
 

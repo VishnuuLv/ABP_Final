@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Schedule } from 'src/app/models/class/schedule';
+import { AirlineInventory } from 'src/app/models/interface/airline-inventory';
+import { AirlineInventoryService } from 'src/app/services/airline-inventory.service';
 import { BookingScheduleService } from 'src/app/services/booking-schedule.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-add-schedule',
@@ -13,11 +16,15 @@ export class AddScheduleComponent implements OnInit {
   schedule: Schedule=new Schedule();
   submitted=false;
   addScheduleForm: FormGroup;
+  flight_name : Array<AirlineInventory>=[];
 
   constructor(private fb: FormBuilder,private ScheduleService:BookingScheduleService,
+    private notifyService : NotificationService,
+    private AirlineService:AirlineInventoryService,
     private router: Router) {
       this.addScheduleForm =  this.fb.group({
         flightNumber: [null, Validators.required],
+        flightId:[null, Validators.required],
        fromPlace: [null, Validators.required],
        toPlace: [null, Validators.required],
        startDate: [null, Validators.required],
@@ -35,6 +42,13 @@ export class AddScheduleComponent implements OnInit {
      }
 
   ngOnInit() {
+    this.getallairlines()
+  }
+
+  getallairlines(){
+    return this.AirlineService.getAirline().subscribe(
+     (res:any) => {this.flight_name=res.result}
+    )
   }
   onSubmit() {
     console.log(this.addScheduleForm.value);
@@ -44,8 +58,10 @@ export class AddScheduleComponent implements OnInit {
         // this.user = Object.assign(this.user, this.registerationForm.value);
         this.ScheduleService.addSchedule(this.userData()).subscribe(() =>
         {
+
             this.onReset();
             this.submitted = true;
+            this.notifyService.showSuccessMessage("Schedule Added Successfully")
         });
 
     }
@@ -59,6 +75,7 @@ export class AddScheduleComponent implements OnInit {
     return this.schedule = {
       scheduleDetailsId:0,
          flightNumber: this. flightNumber.value,
+         flightId:this.flightId.value,
         fromPlace: this.fromPlace.value,
         toPlace: this.toPlace.value,
         startDate: this.startDate.value,
@@ -122,6 +139,10 @@ export class AddScheduleComponent implements OnInit {
     get meal() {
     return this.addScheduleForm.get('meal') as FormControl;
     }
+
+    get flightId() {
+      return this.addScheduleForm.get('flightId') as FormControl;
+      }
 
 
 }

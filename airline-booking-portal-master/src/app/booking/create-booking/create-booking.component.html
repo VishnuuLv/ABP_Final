@@ -47,7 +47,7 @@
               </div>
               <br />
               <div class="row">
-                <div class="col">
+                <div class="col-6">
                   <input
                       type="text"
                       class="form-control"
@@ -61,20 +61,21 @@
                       }"
                     />
                 </div>
-                <div class="col">
+                <div class="col-5">
                   <input
                       type="text"
                       class="form-control"
                       placeholder="Have a Coupon? Enter here!!!"
                       formControlName="couponCode"
-                      [ngStyle]="{
-                        'border-color':
-                          !couponCode.valid && couponCode.touched
-                            ? 'red'
-                            : 'none'
-                      }"
+
                     />
-                  <!-- <span class="coupontext">Yay Coupon Applied!!!</span> -->
+                    <span *ngIf="(couponCode.touched && couponCode.dirty)">
+                   <span  class="coupontext"> {{couponAccepted===true ? "Yay Coupon Applied!!!":"Sorry, Invalid Coupon"}}</span>
+                  </span>
+                   <!-- <span *ngIf="couponAccepted===false" class="coupontext">Sorry, Invalid Coupon</span>  -->
+                </div>
+                <div class="col-1">
+                  <button class="btn btn-success" (click)="CheckCoupon()">Apply</button>&nbsp;
                 </div>
               </div>
             </form>
@@ -215,6 +216,6 @@
     </div>
   </main>
 </div>
-<div *ngIf="submitted" style="color: green; text-align: center; ">
+<!-- <div *ngIf="submitted" style="color: green; text-align: center; ">
   <h4>Ticket Booked successfully!</h4>
-</div>
+</div> -->

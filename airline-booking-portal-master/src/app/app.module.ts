@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -22,6 +22,12 @@ import { ListAllBookingsComponent } from './booking/list-all-bookings/list-all-b
 import { CreateBookingComponent } from './booking/create-booking/create-booking.component';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { SharedModule } from './SharedModule/shared/shared.module';
+import { ToastrModule } from 'ngx-toastr';
+import { SearchByPnrComponent } from './booking/search-by-pnr/search-by-pnr.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TokenInterceptorService  } from './services/token-interceptor.service';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 
 @NgModule({
@@ -40,7 +46,8 @@ import { SharedModule } from './SharedModule/shared/shared.module';
     ListBookingbyIdComponent,
     ListAllBookingsComponent,
     ListPassengerbyBookingidComponent,
-    CreateBookingComponent
+    CreateBookingComponent,
+    SearchByPnrComponent
    ],
   imports: [
     HttpClientModule,
@@ -48,7 +55,12 @@ import { SharedModule } from './SharedModule/shared/shared.module';
     RouterModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,AuthenticationModule,SharedModule
+    ReactiveFormsModule,
+    AuthenticationModule,
+    NgxPaginationModule,
+    SharedModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

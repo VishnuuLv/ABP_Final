@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { BookingSchedule } from 'src/app/models/interface/booking-schedule';
@@ -12,8 +13,9 @@ export class ListCurrentScheduleComponent implements OnInit {
   schedule_details : Array<BookingSchedule>=[];
   id:number=0;
   searchForm: FormGroup;
+  token:any;
 
-  constructor(private scheduleService:BookingScheduleService,private fb: FormBuilder) {
+  constructor(private scheduleService:BookingScheduleService,private fb: FormBuilder,private httpclient:HttpClient) {
     this.searchForm =  this.fb.group({
       fromPlace:[null, Validators.required],
       toPlace: [null, Validators.required],
@@ -23,12 +25,17 @@ export class ListCurrentScheduleComponent implements OnInit {
 
   ngOnInit() {
     this.getAllSchedule();
+    this.token=sessionStorage.getItem('token');
+    //console.log(this.token);
+    //this.getWeather();
   }
   getAllSchedule(){
     return this.scheduleService.getSchedule().subscribe(
      (res:any) => {this.schedule_details=res.result}
     )
   }
+
+
 
   search(){
 

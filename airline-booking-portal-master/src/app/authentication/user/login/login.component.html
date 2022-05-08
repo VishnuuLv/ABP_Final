@@ -54,6 +54,14 @@
     [ngStyle]="{'border-color': (!userName.valid && (userName.touched )) ?
    'red':'none'}" />
     <i class="bx bxs-user-circle"></i>
+    <span *ngIf="!userName.valid && (userName.touched)" class="error-block" style="color: red; font-style: italic;">
+      <span *ngIf="userName.hasError('required')" style="color: red; font-style: italic;">
+      User Name Required
+      </span>
+    </span>
+    <span *ngIf="userName.hasError('email')"  style="color: red; font-style: italic;">
+      Please provide valid email id
+    </span>
   </div>
 
   <div class="input-wrapper">
@@ -62,6 +70,11 @@
     [ngStyle]="{'border-color': (!password.valid && (password.touched )) ?
    'red':'none'}">
     <i class="bx bx-key"></i>
+    <span *ngIf="!password.valid && (password.touched )" class="error-block">
+      <span *ngIf="password.hasError('required')" style="color: red; font-style: italic;">
+        Password Required
+      </span>
+    </span>
   </div>
 
   <div>

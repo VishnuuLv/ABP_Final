@@ -9,6 +9,24 @@
     <button class="btn btn-info" [routerLink]="['/addnewschedule']" >Add New Schedule</button>
   </h1>
   </div>
+  <form [formGroup]="searchForm">
+    <div class="container">
+  <div class="row">
+    <div class="col-3">
+      <input type="text" class="form-control" placeholder="Source" formControlName="fromPlace" />
+    </div>
+    <div class="col-3">
+      <input type="text" class="form-control" placeholder="Destination" formControlName="toPlace" />
+    </div>
+    <div class="col-3">
+      <input type="date" class="form-control" placeholder="Travel Date" formControlName="startDate" />
+    </div>
+    <div class="col-3">
+      <button class="btn btn-success" (click)="search()">Search Flights!!!</button>&nbsp;
+    </div>
+  </div>
+</div>
+</form>
   <div class="panel-body">
     <table class="table table-striped">
       <thead style="text-align: center;">
@@ -24,7 +42,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let schedule of schedule_details" style="text-align: center;">
+        <tr *ngFor="let schedule of schedule_details | paginate
+        : {
+            itemsPerPage: tableSize,
+            currentPage: page,
+            totalItems: count
+          };
+    let i = index" style="text-align: center;">
           <td>{{schedule.fromPlace}}</td>
           <td>{{schedule.toPlace}}</td>
           <td>
@@ -51,5 +75,13 @@
         </tr>
       </tbody>
     </table>
+    <div class="d-flex justify-content-center">
+    <pagination-controls class="pagination"
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"
+    >
+    </pagination-controls>
+  </div>
   </div>
 </div>

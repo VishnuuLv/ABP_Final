@@ -5,7 +5,12 @@
       <input type="text" class="form-control" formControlName="userName" placeholder="Please Enter Email ID" [ngStyle]="{'border-color': (!userName.valid && (userName.touched )) ?
            'red':'none'}">
       <span *ngIf="!userName.valid && (userName.touched)" class="error-block" style="color: red; font-style: italic;">
+        <span *ngIf="userName.hasError('required')" style="color: red; font-style: italic;">
         User Name Required
+        </span>
+      </span>
+      <span *ngIf="userName.hasError('email')"  style="color: red; font-style: italic;">
+        Please provide valid email id
       </span>
     </div>
     <div class="row">
@@ -41,6 +46,21 @@
           Password Required
         </span>
       </span>
+    </div>
+    <div class="form-group col-12">
+      <label for="cpasswordHash" class="form-label">Confirm Password</label>
+      <input type="password" class="form-control" formControlName="confirmPasswordHash" placeholder="Please Re-enter Password">
+      <span  *ngIf="!confirmPasswordHash.valid && (confirmPasswordHash.touched || submitted)" class="error-block">
+        <span *ngIf="confirmPasswordHash.hasError('required')">
+          <span  style="color: red; font-style: italic;">
+          Please confirm password</span>
+        </span>
+      </span>
+        <span *ngIf="addUserForm.hasError('notmatched') && confirmPasswordHash.valid" class="error-block">
+          <span  style="color: red; font-style: italic;">
+          Password not matched
+          </span>
+        </span>
     </div>
     <div class="form-group col-12">
       <label for="role" class="form-label">Role</label>

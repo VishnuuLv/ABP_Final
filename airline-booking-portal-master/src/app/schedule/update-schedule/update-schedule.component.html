@@ -6,7 +6,8 @@
       </div>
       <div class="card-body">
         <form [formGroup]="updateScheduleForm" (ngSubmit)="onSubmit()">
-          <div class="form-group col-12">
+          <div class="row">
+            <div class="col-6 m-auto">
             <label for=" flightNumber" class="form-label">Airline Number</label>
             <input type="text" class="form-control" formControlName="flightNumber" [ngStyle]="{'border-color': (!flightNumber.valid && (flightNumber.touched )) ?
             'red':'none'}">
@@ -14,6 +15,25 @@
               style="color: red; font-style: italic;">
               Please provide airline number
             </span>
+            </div>
+            <div class="col-6 m-auto">
+              <label for="flightId" class="form-label">Select Airline</label>
+              <select  class="form-select"
+                      formControlName="flightId"
+                      [ngStyle]="{
+                        'border-color':
+                          !flightId.valid && flightId.touched
+                            ? 'red'
+                            : 'none'
+                      }"
+                    >
+                    <!-- <option value="" selected disabled >Airline</option>
+                      <option value="Veg" >Veg</option>
+                      <option value="NonVeg">Non Veg</option> -->
+                      <option *ngFor="let airline of flight_name; let i = index" [value]="airline.flightId">
+                        {{airline.flightName}}
+                    </select>
+            </div>
           </div>
           <div class="row">
             <div class="col-6 m-auto">
@@ -163,6 +183,6 @@
   </div>
 </div>
 <br>
-<div *ngIf="submitted" style="color: green; text-align: center; ">
+<!-- <div *ngIf="submitted" style="color: green; text-align: center; ">
   <h4>Schedule Updated successfully!</h4>
-</div>
+</div> -->

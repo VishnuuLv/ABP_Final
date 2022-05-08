@@ -3,7 +3,9 @@
     <h1 class="font-bold mt-4 mb-3 h5"><i class="fa-solid fa-plane-up"></i> Book Your Flight </h1>
   </div>
 
+
   <form [formGroup]="searchForm">
+    <div class="container">
   <div class="row">
     <div class="col-3">
       <input type="text" class="form-control" placeholder="Source" formControlName="fromPlace" />
@@ -18,6 +20,7 @@
       <button class="btn btn-success" (click)="search()">Search Flights!!!</button>&nbsp;
     </div>
   </div>
+</div>
 </form>
 
   <div class="panel-body">

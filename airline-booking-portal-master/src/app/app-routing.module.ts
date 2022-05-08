@@ -11,6 +11,7 @@ import { CreateBookingComponent } from './booking/create-booking/create-booking.
 import { ListAllBookingsComponent } from './booking/list-all-bookings/list-all-bookings.component';
 import { ListBookingbyIdComponent } from './booking/list-bookingby-id/list-bookingby-id.component';
 import { ListPassengerbyBookingidComponent } from './booking/passenger/list-passengerby-bookingid/list-passengerby-bookingid.component';
+import { SearchByPnrComponent } from './booking/search-by-pnr/search-by-pnr.component';
 import { AddCouponComponent } from './coupon/add-coupon/add-coupon.component';
 import { ListCouponsComponent } from './coupon/list-coupons/list-coupons.component';
 import { UpdateCouponComponent } from './coupon/update-coupon/update-coupon.component';
@@ -40,7 +41,8 @@ const routes: Routes = [
         {path:'listBookingbyid',component:ListBookingbyIdComponent},
         {path:'listBooking',component:ListAllBookingsComponent},
         {path:'listpassengers/:id',component:ListPassengerbyBookingidComponent},
-        {path:'booknow/:id',component:CreateBookingComponent}]
+        {path:'booknow/:id',component:CreateBookingComponent},
+        {path:'searchbyPNR',component:SearchByPnrComponent}]
   },{path:'**',component:LoginComponent}];//to redirect if we put any wrong path
 
 @NgModule({

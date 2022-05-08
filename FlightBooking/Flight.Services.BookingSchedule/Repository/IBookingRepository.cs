@@ -9,7 +9,7 @@ namespace Flight.Services.BookingSchedule.Repository
     public interface IBookingRepository
     {
         Task<IEnumerable<BookingViewDto>> GetBooking();
-        Task<BookingViewDto> GetBookingByPNR(string pnr);
+        Task<IEnumerable<BookingViewDto>> GetBookingByPNR(string pnr);
         Task<IEnumerable<BookingViewDto>> GetBookingByUserId(int userId);
         Task<BookingViewDto> GetBookingByemailId(string emailId);
         Task<BookingDto> CreateUpdateBooking(BookingDto bookingDto);

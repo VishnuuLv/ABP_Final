@@ -25,7 +25,7 @@ namespace Flight.Services.BookingSchedule
                 config.CreateMap<ScheduleDetail, ScheduleDetailViewDto>().ReverseMap();
                 config.CreateMap<AirlineViewDto, Airline>().ReverseMap();
                 config.CreateMap<PassengerViewDto, Passenger>().ReverseMap();
-                //config.CreateMap<ScheduleDetails, ScheduleDetailsDto>().ReverseMap();
+                config.CreateMap<Coupon, CouponViewDto>().ReverseMap();
             });
             return mappingConfig;
         }

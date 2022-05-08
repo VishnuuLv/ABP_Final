@@ -51,58 +51,6 @@ namespace Flight.Services.BookingSchedule.Migrations
                     b.HasKey("flightId");
 
                     b.ToTable("Flight");
-
-                    b.HasData(
-                        new
-                        {
-                            flightId = 1,
-                            contactAddress = "Mumbai",
-                            contactNumber = "1234567890",
-                            createdDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            flightName = "Air India",
-                            logoURL = "Null",
-                            updatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            flightId = 2,
-                            contactAddress = "Delhi",
-                            contactNumber = "1234657890",
-                            createdDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            flightName = "Vistara",
-                            logoURL = "Null",
-                            updatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            flightId = 3,
-                            contactAddress = "Bangalore",
-                            contactNumber = "1243657890",
-                            createdDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            flightName = "Go Air",
-                            logoURL = "Null",
-                            updatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            flightId = 4,
-                            contactAddress = "Mumbai",
-                            contactNumber = "1243658790",
-                            createdDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            flightName = "Indigo",
-                            logoURL = "Null",
-                            updatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            flightId = 5,
-                            contactAddress = "Chennai",
-                            contactNumber = "1253658790",
-                            createdDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            flightName = "Spice Jet",
-                            logoURL = "Null",
-                            updatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("Flight.Services.BookingSchedule.Models.Booking", b =>

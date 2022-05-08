@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { Airline } from 'src/app/models/class/airline';
 import { AirlineInventoryService } from 'src/app/services/airline-inventory.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-add-airline',
@@ -14,10 +15,10 @@ export class AddAirlineComponent implements OnInit {
   submitted=false;
   addAirlineForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private AirlineService:AirlineInventoryService,private router: Router) {
+  constructor(private fb: FormBuilder,private AirlineService:AirlineInventoryService,private notifyService : NotificationService,private router: Router) {
     this.addAirlineForm =  this.fb.group({
       airlineName: [null, Validators.required],
-      contactNumber: [null, Validators.required],
+      contactNumber:  [null, [Validators.required, Validators.maxLength(10)]],
       contactAddress: [null, Validators.required],
     });
   }
@@ -32,6 +33,7 @@ export class AddAirlineComponent implements OnInit {
         // this.user = Object.assign(this.user, this.registerationForm.value);
         this.AirlineService.addAirline(this.userData()).subscribe(() =>
         {
+            this.notifyService.showSuccessMessage("Airline Added Successfully")
             this.onReset();
             this.submitted = true;
         });

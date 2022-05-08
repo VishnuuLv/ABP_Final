@@ -10,6 +10,7 @@ namespace Flight.Services.CouponAPI.Repository
     public interface ICouponRepository
     {
         Task<IEnumerable<CouponViewDto>> GetCoupon();
+        Task<CouponViewDto> GetCouponByName(string couponCode);
         Task<CouponViewDto> GetCouponById(int couponId);
         Task<CouponDto> CreateUpdateCoupon(CouponDto couponDto);
         Task<bool> DeleteCoupon(int couponId);

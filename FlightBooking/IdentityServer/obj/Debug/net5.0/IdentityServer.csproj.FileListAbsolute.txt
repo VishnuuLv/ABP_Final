@@ -1,0 +1,128 @@
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\appsettings.json
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer.exe
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer.deps.json
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer.runtimeconfig.json
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer.runtimeconfig.dev.json
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\ref\IdentityServer.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer.pdb
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityModel.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer4.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer4.EntityFramework.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer4.EntityFramework.Storage.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer4.Storage.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.csproj.AssemblyReference.cache
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.AssemblyInfoInputs.cache
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.AssemblyInfo.cs
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.csproj.CoreCompileInputs.cache
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\staticwebassets\IdentityServer.StaticWebAssets.Manifest.cache
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\staticwebassets\IdentityServer.StaticWebAssets.xml
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\scopedcss\bundle\IdentityServer.styles.css
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.RazorTargetAssemblyInfo.cache
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\ref\IdentityServer.dll
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.pdb
+C:\Users\viki\source\repos\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.genruntimeconfig.cache
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\appsettings.json
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer.exe
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer.deps.json
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer.runtimeconfig.json
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer.runtimeconfig.dev.json
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\ref\IdentityServer.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer.pdb
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityModel.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer4.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer4.EntityFramework.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer4.EntityFramework.Storage.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\IdentityServer4.Storage.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.csproj.AssemblyReference.cache
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.AssemblyInfoInputs.cache
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.AssemblyInfo.cs
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.csproj.CoreCompileInputs.cache
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\staticwebassets\IdentityServer.StaticWebAssets.Manifest.cache
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\staticwebassets\IdentityServer.StaticWebAssets.xml
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\scopedcss\bundle\IdentityServer.styles.css
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.RazorTargetAssemblyInfo.cache
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.csproj.CopyComplete
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\ref\IdentityServer.dll
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.pdb
+C:\Users\prash\Downloads\IdentityServer (1)\IdentityServer\IdentityServer\obj\Debug\net5.0\IdentityServer.genruntimeconfig.cache
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\appsettings.json
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\IdentityServer.exe
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\IdentityServer.deps.json
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\IdentityServer.runtimeconfig.json
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\IdentityServer.runtimeconfig.dev.json
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\IdentityServer.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\ref\IdentityServer.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\IdentityServer.pdb
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\IdentityModel.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\IdentityServer4.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\IdentityServer4.EntityFramework.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\IdentityServer4.EntityFramework.Storage.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\IdentityServer4.Storage.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\IdentityServer.csproj.AssemblyReference.cache
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\IdentityServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\IdentityServer.AssemblyInfoInputs.cache
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\IdentityServer.AssemblyInfo.cs
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\IdentityServer.csproj.CoreCompileInputs.cache
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\IdentityServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\staticwebassets\IdentityServer.StaticWebAssets.Manifest.cache
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\staticwebassets\IdentityServer.StaticWebAssets.xml
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\scopedcss\bundle\IdentityServer.styles.css
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\IdentityServer.RazorTargetAssemblyInfo.cache
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\IdentityServer.csproj.CopyComplete
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\IdentityServer.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\ref\IdentityServer.dll
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\IdentityServer.pdb
+C:\Users\prash\OneDrive\Documents\GitHub\ABP_Final\FlightBooking\IdentityServer\obj\Debug\net5.0\IdentityServer.genruntimeconfig.cache

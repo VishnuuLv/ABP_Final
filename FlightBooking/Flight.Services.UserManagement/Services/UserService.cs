@@ -45,13 +45,23 @@ namespace Flight.Services.UserManagement.Services
         public AuthenticateResponse Authenticate(AuthenticateRequest model)
         {
             var user = _context.Users.SingleOrDefault(x => x.Username == model.Username);
+            var jwtToken="";
 
-            // validate
+            // validate // authentication successful so generate jwt token
             if (user == null || !BCryptNet.Verify(model.Password, user.PasswordHash))
-                throw new AppException("Username or password is incorrect");
-
-            // authentication successful so generate jwt token
-            var jwtToken = _jwtUtils.GenerateJwtToken(user);
+            {
+                user = new User();
+                user.Id = 0;
+                user.FirstName = "";
+                user.LastName = "";
+                user.Role = 0;
+                user.Username = "";
+                return new AuthenticateResponse(user, jwtToken);
+            }
+            else
+            {
+                jwtToken = _jwtUtils.GenerateJwtToken(user);
+            }
 
             return new AuthenticateResponse(user, jwtToken);
         }

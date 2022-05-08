@@ -1,6 +1,7 @@
 export class Schedule {
   scheduleDetailsId : number;
   flightNumber : string;
+  flightId:number;
   fromPlace :string;
   toPlace :  string;
   startDate : Date;
@@ -17,6 +18,7 @@ export class Schedule {
   constructor(){
     this.scheduleDetailsId=0;
     this.flightNumber="";
+    this.flightId=0;
     this.fromPlace="";
     this.toPlace="";
     this.startDate=new Date();

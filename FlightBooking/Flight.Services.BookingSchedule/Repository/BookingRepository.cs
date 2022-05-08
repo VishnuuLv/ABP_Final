@@ -178,17 +178,15 @@ namespace Flight.Services.BookingSchedule.Repository
             }
         }
 
-        public async Task<BookingViewDto> GetBookingByPNR(string pnr)
+        public async Task<IEnumerable<BookingViewDto>> GetBookingByPNR(string pnr)
         {
-            Booking booking = //await _db.Bookings.Where(x => x.BookingId == bookingId).FirstOrDefaultAsync();
-            await _db.Bookings
-                           //.Where(s => s.BookingId == bookingId)
-                           .Include(s => s.passenger)                    
-                           .FirstOrDefaultAsync(s=>s.PNR== pnr);                 
-
-
-            return _mapper.Map<BookingViewDto>(booking);
+            List<Booking> store = await _db.Bookings
+                            .Where(s => s.PNR == pnr)
+                            .Include(s => s.passenger)
+                            .ToListAsync();
+            return _mapper.Map<List<BookingViewDto>>(store);
         }
+
 
         public async Task<IEnumerable<BookingViewDto>> GetBookingByUserId(int userId)
         {

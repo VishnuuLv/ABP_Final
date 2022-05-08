@@ -39,7 +39,7 @@
             {{booking.finalticketCost | currency:'INR'}}
           </td>
           <td  >
-            <span [ngStyle]="{'background-color': (booking.isActive==='Y' ) ?
+            <span class="badge badge-pill badge-success"  [ngStyle]="{'background-color': (booking.isActive==='Y' ) ?
             '#81CB21'  :'#DC3D1D'}">
             {{booking.isActive==='Y' ?'Booked':'Cancelled'}}
           </span>

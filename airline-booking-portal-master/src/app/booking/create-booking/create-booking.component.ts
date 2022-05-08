@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Booking } from 'src/app/models/class/booking';
 import { BookingSchedule } from 'src/app/models/interface/booking-schedule';
 import { BookingScheduleService } from 'src/app/services/booking-schedule.service';
+import { CouponService } from 'src/app/services/coupon.service';
+import { NotificationService } from 'src/app/services/notification.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -21,10 +23,13 @@ export class CreateBookingComponent implements OnInit {
   addBookingMeta: FormGroup;
   Passengers:any[]=[];
   userId:any;
+  couponAccepted:any;
 
 
 
   constructor(private fb: FormBuilder,private BookingService:BookingScheduleService,private UserService:UserService,
+    private couponService:CouponService,
+    private notifyService : NotificationService,
     private router: Router,private route:ActivatedRoute) {
 
       this.addBookingMeta =  this.fb.group({
@@ -32,7 +37,7 @@ export class CreateBookingComponent implements OnInit {
         name: [null, Validators.required],
         emailId: [null, Validators.required],
         noOfSeats: [null, Validators.required],
-        couponCode: [null, Validators.required]
+        couponCode: ''
     });
 
       this.addBookingForm =  this.fb.group({
@@ -56,6 +61,7 @@ export class CreateBookingComponent implements OnInit {
 
   AddPassenger(){
     this.Passengers.push(this.addBookingForm.value);
+    this.notifyService.showSuccessMessage("Passenger Added Successfully")
     this.addBookingForm.reset();
 
   }
@@ -72,6 +78,7 @@ export class CreateBookingComponent implements OnInit {
       this.BookingService.addBooking(Finaloutput).subscribe((res) =>
       {
         console.log(res);
+        this.notifyService.showSuccessMessage("Ticket Booked Successfully")
           this.onReset();
           this.submitted = true;
           this.Passengers=[];
@@ -101,6 +108,26 @@ export class CreateBookingComponent implements OnInit {
       //optForMeal: this.optForMeal.value,
       couponCode: this.couponCode.value,
     };
+  }
+
+  CheckCoupon(){
+
+    return this.couponService.getCouponByName(this.couponCode.value)
+    .subscribe((res:any)=>
+    {
+      console.log(res.result)
+      console.log(res.result.couponId);
+      if(res.result.couponId>0)
+      {
+          this.couponAccepted=true
+          console.log(this.couponAccepted);
+      }
+      else
+      {
+        this.couponAccepted=false
+      }
+    })
+
   }
 
   // get  scheduleDetailsId() {

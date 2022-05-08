@@ -1,5 +1,7 @@
 ﻿using Flight.Services.BookingSchedule.Models.Dto;
+using Flight.Services.BookingSchedule.RabbitMQSender;
 using Flight.Services.BookingSchedule.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,15 +11,18 @@ using System.Threading.Tasks;
 namespace Flight.Services.BookingSchedule.Controllers
 {
     [Route("api/Booking")]
+   
     public class BookingController : Controller
     {
         private readonly IBookingRepository _bookingRepository;
         protected ResponseDto _response;
+        private readonly IRabbitMQAirlineSender _rabbitMQairlineSender;
 
-        public BookingController(IBookingRepository bookingRepository)
+        public BookingController(IBookingRepository bookingRepository, IRabbitMQAirlineSender rabbitMQairlineSender)
         {
             _bookingRepository = bookingRepository;
             this._response = new ResponseDto();
+            _rabbitMQairlineSender = rabbitMQairlineSender;
         }
 
         [HttpGet]
@@ -38,12 +43,12 @@ namespace Flight.Services.BookingSchedule.Controllers
         }
 
         [HttpGet]
-        [Route("GetbyBookingId/{pnr}")]
+        [Route("GetBookingByPNR/{pnr}")]
         public async Task<object> GetBookingByPNR(string pnr)
         {
             try
             {
-                BookingViewDto bookingDtos = await _bookingRepository.GetBookingByPNR(pnr);
+                IEnumerable<BookingViewDto> bookingDtos = await _bookingRepository.GetBookingByPNR(pnr);
                 _response.Result = bookingDtos;
             }
             catch (Exception ex)
@@ -54,6 +59,7 @@ namespace Flight.Services.BookingSchedule.Controllers
             }
             return _response;
         }
+
 
         [HttpGet]
         [Route("GetByUserId/{userId}")]
@@ -117,8 +123,19 @@ namespace Flight.Services.BookingSchedule.Controllers
             {
                 BookingDto model = await _bookingRepository.CreateUpdateBooking(bookingDto);
                 _response.Result = model;
-                
-                
+
+               
+                LogsDto log = new LogsDto();
+                log.log = "Booking was created by "+ bookingDto.name+" for schedule detail id "+ bookingDto.scheduleDetailsId;
+                log.task = "Create";
+                log.senderAPI = "BookingScheduleAPI";
+
+
+                //rabbitMQ
+                _rabbitMQairlineSender.SendData(log, "logqueue");
+                // _rabbitMQairlineSender.SendData(schedule1, "scheduledataqueue");
+
+
 
             }
             catch (Exception ex)
@@ -139,6 +156,16 @@ namespace Flight.Services.BookingSchedule.Controllers
             {
                 BookingDto model = await _bookingRepository.CreateUpdateBooking(bookingDto);
                 _response.Result = model;
+
+                LogsDto log = new LogsDto();
+                log.log = "Booking was updated by " + bookingDto.name + " for schedule detail id " + bookingDto.scheduleDetailsId;
+                log.task = "Updated";
+                log.senderAPI = "BookingScheduleAPI";
+
+
+                //rabbitMQ
+                _rabbitMQairlineSender.SendData(log, "logqueue");
+                // _rabbitMQairlineSender.SendData(schedule1, "scheduledataqueue");
             }
             catch (Exception ex)
             {
@@ -157,6 +184,19 @@ namespace Flight.Services.BookingSchedule.Controllers
             {
                 bool isSuccess = await _bookingRepository.DeleteBooking(bookingId);
                 _response.Result = isSuccess;
+
+               // BookingViewDto schedule = await _bookingRepository.getbooking(bookingId);
+               // BookingViewDto schedule1 = schedule;
+
+                LogsDto log = new LogsDto();
+                log.log = bookingId +" was cancelled by user";
+                log.task = "Delete";
+                log.senderAPI = "BookingScheduleAPI";
+
+
+                //rabbitMQ
+                _rabbitMQairlineSender.SendData(log, "logqueue");
+                // _rabbitMQairlineSender.SendData(schedule1, "scheduledataqueue");
 
 
             }

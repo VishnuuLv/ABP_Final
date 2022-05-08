@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/class/user';
+import { NotificationService } from 'src/app/services/notification.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -14,15 +15,21 @@ export class RegisterComponent implements OnInit {
   submitted=false;
   addUserForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private UserService:UserService,private router: Router) {
+  constructor(private fb: FormBuilder,private UserService:UserService,private notifyService : NotificationService,private router: Router) {
     this.addUserForm =  this.fb.group({
-      userName: [null, Validators.required],
+      userName: [null, [Validators.required,Validators.email]],
       firstName: [null, Validators.required],
       lastName: [null, Validators.required],
       role: '',
       passwordHash: [null, Validators.required],
-    });
+      confirmPasswordHash:[null,Validators.required]
+    },{validators: this.passwordMatchingValidatior});
    }
+
+   passwordMatchingValidatior(fb: FormGroup): Validators {
+    return fb.get('passwordHash')?.value === fb.get('confirmPasswordHash')?.value ? false :
+        {notmatched: true};
+}
 
   ngOnInit() {
   }
@@ -36,6 +43,7 @@ export class RegisterComponent implements OnInit {
         this.UserService.addNormalUser(this.userData()).subscribe(() =>
         {
             this.onReset();
+            this.notifyService.showSuccess("User Registered Succesfully", "ABP Portal")
             this.submitted = true;
         });
 
@@ -75,6 +83,9 @@ get role() {
 }
 get passwordHash() {
   return this.addUserForm.get('passwordHash') as FormControl;
+}
+get confirmPasswordHash() {
+  return this.addUserForm.get('confirmPasswordHash') as FormControl;
 }
 
 }

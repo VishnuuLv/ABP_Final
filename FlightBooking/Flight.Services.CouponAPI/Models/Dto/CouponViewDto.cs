@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Flight.MessageBus;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Flight.Services.CouponAPI.Models.Dto
 {
-    public class CouponViewDto
+    public class CouponViewDto:BaseMessage
     {
         public int couponId { get; set; }       
         public string couponCode { get; set; }

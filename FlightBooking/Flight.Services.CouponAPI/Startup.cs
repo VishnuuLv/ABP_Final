@@ -1,6 +1,8 @@
 using AutoMapper;
 using Flight.Services.CouponAPI.DbContexts;
+using Flight.Services.CouponAPI.RabbitMQSender;
 using Flight.Services.CouponAPI.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +32,28 @@ namespace Flight.Services.CouponAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
+            {
+                builder.AllowAnyMethod().AllowAnyHeader();
+            }));
+            services.AddControllers();
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(o =>
+            {
+                o.Authority = "http://localhost:9006";
+                o.Audience = "myresourceapi";
+                o.RequireHttpsMetadata = false;
+            });
+
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Admin", policy => policy.RequireClaim("client_id", "secret_client_id"));
+                options.AddPolicy("User", policy => policy.RequireClaim("client_id", "user_client_id"));
+            });
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -38,6 +62,8 @@ namespace Flight.Services.CouponAPI
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<ICouponRepository, CouponRepository>();
+            services.AddSingleton<IRabbitMQAirlineSender, RabbitMQAirlineSender>();
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -49,6 +75,7 @@ namespace Flight.Services.CouponAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -60,6 +87,8 @@ namespace Flight.Services.CouponAPI
 
             app.UseRouting();
 
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
