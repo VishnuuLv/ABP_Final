@@ -31,7 +31,6 @@
             <button (click)="removeAirport(airport.flightId)" class="btn btn-danger" *ngIf="airport.isActive==='Y'">Delete</button>
             <button class="btn btn-info" style="margin-left: 10px" *ngIf="airport.isActive==='Y'" [routerLink]="['/updateAirline',airport.flightId]">update</button>
             <button class="btn btn-info" style="margin-left: 40px" *ngIf="airport.isActive==='N'" [routerLink]="['/updateAirline',airport.flightId]">Activate</button>
-
               <!-- <button  class="btn btn-info" style="margin-left: 10px">Details</button> -->
           </td>
         </tr>
