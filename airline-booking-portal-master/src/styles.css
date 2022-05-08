@@ -45,6 +45,24 @@ table th.last {
  text-transform:capitalize;
 }
 
+.btn-danger{
+
+ color:rgb(11, 7, 7);
+ background-color: #fff;
+ border: 1.5px solid #e11616;
+ border-radius: 10px;
+ text-transform:capitalize;
+
+}
+
+.btn-danger:hover{
+  /* color:white; */
+  background-color: #e11616;
+  /* border: 3.5px solid #E19116; */
+  /* text-transform:capitalize; */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.10), 0px 10px 20px rgba(0, 0, 0, 0.05), 0px 20px 20px rgba(0, 0, 0, 0.05), 0px 30px 20px rgba(0, 0, 0, 0.05);
+ }
+
 .btn-info:hover{
  /* color:white; */
  background-color: #E19116;
