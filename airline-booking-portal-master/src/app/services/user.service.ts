@@ -14,20 +14,33 @@ constructor(private httpclient:HttpClient) {
 }
 
 
-addNormalUser(user:object){
-  return this.httpclient.post( environment.baseurl + 'User/Register',user);
-}
+// addNormalUser(user:object){
+//   return this.httpclient.post( environment.baseurl + 'User/Register',user);
+// }
 
-getUserById(id:number){
-  return this.httpclient.get( environment.baseurl + 'Userbyid/'+id);
-}
+// getUserById(id:number){
+//   return this.httpclient.get( environment.baseurl + 'Userbyid/'+id);
+// }
 
 // getUsers(data:string,httpheader:any){
 //   return this.httpclient.post('https://localhost:44384/connect/token',data,httpheader);
 // }
 
+// login(login:object){
+//   return this.httpclient.post( environment.baseurl + 'Login',login);
+// }
+
 login(login:object){
-  return this.httpclient.post( environment.baseurl + 'Login',login);
+  return this.httpclient.post("https://flightservicesusermanagement.azurewebsites.net/api/user/action",login);
 }
+
+addNormalUser(user:object){
+  return this.httpclient.post( "https://flightservicesusermanagement.azurewebsites.net/api/user/Register",user);
+}
+
+getUserById(id:number){
+  return this.httpclient.get( "https://flightservicesusermanagement.azurewebsites.net/api/user/"+id);
+}
+
 
 }

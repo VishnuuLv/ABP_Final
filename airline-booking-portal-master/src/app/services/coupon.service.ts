@@ -18,39 +18,74 @@ constructor(private httpclient:HttpClient) {
 
 
 
+// getAllCoupons(){
+//   return this.httpclient.get(environment.baseurl + 'coupon' ,
+//      { headers:new HttpHeaders().append('Authorization', `Bearer ${this.token}`)}
+//      )
+// }
+
+// getCouponById(id:number){
+//   return this.httpclient.get( environment.baseurl + 'admin/getcoupon/'+id,
+//   { headers:new HttpHeaders().append('Authorization', `Bearer ${this.token}`)}
+//   )
+// }
+
+// getCouponByName(couponCode:string){
+//   return this.httpclient.get( environment.baseurl + 'admin/getcouponbyname/'+couponCode,
+//   { headers:new HttpHeaders().append('Authorization', `Bearer ${this.token}`)}
+//   )
+// }
+
+// deleteCouponByID(id:number){
+//   return this.httpclient.delete( environment.baseurl + 'admin/deletecoupon/'+id,
+//   { headers:new HttpHeaders().append('Authorization', `Bearer ${this.token}`)}
+//   )
+// }
+
+// updateCouponByID(coupon:object){
+//   return this.httpclient.put( environment.baseurl + 'admin/addcoupon',coupon,
+//   { headers:new HttpHeaders().append('Authorization', `Bearer ${this.token}`)}
+//   )
+// }
+
+// addCoupon(coupon:object){
+//   return this.httpclient.post( environment.baseurl + 'admin/addcoupon',coupon,
+//   { headers:new HttpHeaders().append('Authorization', `Bearer ${this.token}`)}
+//   )
+// }
+
 getAllCoupons(){
-  //return this.httpclient.get( environment.baseurl + 'coupon');
-  return this.httpclient.get(environment.baseurl + 'coupon' ,
+  return this.httpclient.get("https://flightservicescouponapi.azurewebsites.net/api/Coupon" ,
      { headers:new HttpHeaders().append('Authorization', `Bearer ${this.token}`)}
      )
 }
 
 getCouponById(id:number){
-  return this.httpclient.get( environment.baseurl + 'admin/getcoupon/'+id,
+  return this.httpclient.get( "https://flightservicescouponapi.azurewebsites.net/api/Coupon/" +id,
   { headers:new HttpHeaders().append('Authorization', `Bearer ${this.token}`)}
   )
 }
 
 getCouponByName(couponCode:string){
-  return this.httpclient.get( environment.baseurl + 'admin/getcouponbyname/'+couponCode,
+  return this.httpclient.get( "https://flightservicescouponapi.azurewebsites.net/api/Coupon/GetCouponByName/"+couponCode,
   { headers:new HttpHeaders().append('Authorization', `Bearer ${this.token}`)}
   )
 }
 
 deleteCouponByID(id:number){
-  return this.httpclient.delete( environment.baseurl + 'admin/deletecoupon/'+id,
+  return this.httpclient.delete( "https://flightservicescouponapi.azurewebsites.net/api/Coupon/"+id,
   { headers:new HttpHeaders().append('Authorization', `Bearer ${this.token}`)}
   )
 }
 
 updateCouponByID(coupon:object){
-  return this.httpclient.put( environment.baseurl + 'admin/addcoupon',coupon,
+  return this.httpclient.put( "https://flightservicescouponapi.azurewebsites.net/api/Coupon",coupon,
   { headers:new HttpHeaders().append('Authorization', `Bearer ${this.token}`)}
   )
 }
 
 addCoupon(coupon:object){
-  return this.httpclient.post( environment.baseurl + 'admin/addcoupon',coupon,
+  return this.httpclient.post( "https://flightservicescouponapi.azurewebsites.net/api/Coupon",coupon,
   { headers:new HttpHeaders().append('Authorization', `Bearer ${this.token}`)}
   )
 }

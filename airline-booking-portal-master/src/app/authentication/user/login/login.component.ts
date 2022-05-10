@@ -83,7 +83,8 @@ getUsers(){
 .set('grant_type', 'client_credentials')
 .set('scope', 'apiscope')
 //console.log(body.toString);
-  return this.httpclient.post('http://localhost:9006/connect/token' ,body.toString(), {
+  //return this.httpclient.post('http://localhost:9006/connect/token' ,body.toString(), {
+    return this.httpclient.post('https://flightservicesidentityserver.azurewebsites.net/connect/token' ,body.toString(), {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
   }).subscribe((res:any)=>{//console.log(res.access_token)
     sessionStorage.setItem("token",res.access_token);}
@@ -97,9 +98,10 @@ getAdmin(){
 .set('grant_type', 'client_credentials')
 .set('scope', 'apiscope')
 //console.log(body.toString);
-  return this.httpclient.post('http://localhost:9006/connect/token' ,body.toString(), {
+  //return this.httpclient.post('http://localhost:9006/connect/token' ,body.toString(), {
+    return this.httpclient.post('https://flightservicesidentityserver.azurewebsites.net/connect/token' ,body.toString(), {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  }).subscribe((res:any)=>{//console.log(res.access_token)
+  }).subscribe((res:any)=>{console.log(res.access_token)
     sessionStorage.setItem("token",res.access_token);});
 }
 
