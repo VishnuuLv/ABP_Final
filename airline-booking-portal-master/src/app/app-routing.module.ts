@@ -25,7 +25,9 @@ import { SharedComponent } from './SharedModule/shared/shared.component';
 const routes: Routes = [
   {path:'',component:AuthComponent,
      children:[{path:'',component:LoginComponent},
-               {path:'registerUser',component:RegisterComponent}]},
+               {path:'registerUser',component:RegisterComponent},
+
+               ]},
   {path:'',component:SharedComponent,canActivate:[AuthGuard],
      children:[
         {path:'schedule',component:ListCurrentScheduleComponent},

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseurl:'http://localhost:9000/api/v1.0/'
+  baseurl:'https://abpportal.azure-api.net/api/v1.0/'
 };
 
 /*

@@ -158,7 +158,7 @@ export class UpdateScheduleComponent implements OnInit {
       return this.ScheduleService.getScheduleById(this.id).subscribe((res:any)=>{
         console.log(res.result);
          this.updateScheduleForm.setValue({//newform is name
-
+                flightId:res.result.flightId,
                 flightNumber: res.result.flightNumber,
                 fromPlace: res.result.fromPlace,
                 toPlace: res.result.toPlace,
